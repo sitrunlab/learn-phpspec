@@ -1,6 +1,7 @@
 {
     "require": {
-        "phpspec/phpspec": "~2.0"
+        "phpspec/phpspec": "~2.0",
+        "henrikbjorn/phpspec-code-coverage": "~1.0.1"
     },
     "config": {
         "bin-dir": "bin"

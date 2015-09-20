@@ -1,2 +1,5 @@
 composer.lock
 vendor/
+coverage.xml
+coverage/
+bin/

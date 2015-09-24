@@ -17,7 +17,7 @@
  * and is licensed under the MIT license.
  */
 
-namespace spec\App;
+namespace Spec\App;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

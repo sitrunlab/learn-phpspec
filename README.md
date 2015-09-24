@@ -6,7 +6,7 @@ Add new Spec:
 $ bin/phpspec desc App/Foo
 ```
 
-You will get `FooSpec` class with namespace `spec\App` inside `spec` folder.
+You will get `FooSpec` class with namespace `Spec\App` inside `spec` folder.
 
 Run phpspec:
 

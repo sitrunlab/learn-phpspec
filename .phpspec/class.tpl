@@ -17,15 +17,8 @@
  * and is licensed under the MIT license.
  */
 
-namespace spec\App;
+namespace %namespace%;
 
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-
-class MarkdownSpec extends ObjectBehavior
+class %name%
 {
-    function it_is_initializable()
-    {
-        $this->shouldHaveType('App\Markdown');
-    }
 }

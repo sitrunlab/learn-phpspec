@@ -1,5 +1,7 @@
 # learn-phpspec
 
+[![Build Status](https://travis-ci.org/sitrunlab/learn-phpspec.svg)](https://travis-ci.org/sitrunlab/learn-phpspec)
+
 Add new Spec:
 
 ```bash

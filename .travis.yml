@@ -8,11 +8,13 @@ php:
   - 7
 
 install:
-  - /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/bin/composer self-update
   - composer install
 
 script:
   - bin/phpspec run
+
+after_script:
+  - bin/phpspec run -v
 
 notifications:
   email: false

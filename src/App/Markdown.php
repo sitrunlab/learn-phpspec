@@ -21,4 +21,8 @@ namespace App;
 
 class Markdown
 {
+    public function outputHtml($argument1, $argument2)
+    {
+        // TODO: write logic here
+    }
 }

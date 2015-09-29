@@ -2,7 +2,7 @@ suites:
   suite:
     namespace: App
     src_path: src
-    psr4_prefix: App
+    psr4_prefix: App\
 
 extensions:
   - PhpSpec\Extension\CodeCoverageExtension

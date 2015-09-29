@@ -11,9 +11,6 @@ before_script:
   - composer dump-autoload -o
 
 script:
-  # travis bug when detecting psr4_prefix?
-  - mkdir spec/App
-  - mv spec/*.php spec/App/
   - ./bin/phpspec run --config ./phpspec.yml
 
 notifications:

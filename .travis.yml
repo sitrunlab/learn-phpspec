@@ -7,7 +7,7 @@ php:
   - 5.6
   - 7
 
-install:
+before_script:
   - composer install --prefer-source --no-interaction
   - composer dump-autoload -o
 

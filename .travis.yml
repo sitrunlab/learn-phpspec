@@ -8,13 +8,11 @@ php:
   - 7
 
 install:
-  - composer install
+  - composer install --prefer-source --no-interaction
+  - composer dump-autoload -o
 
 script:
   - bin/phpspec run
-
-after_script:
-  - bin/phpspec run -v
 
 notifications:
   email: false

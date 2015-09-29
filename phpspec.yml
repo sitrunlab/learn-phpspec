@@ -1,7 +1,6 @@
 suites:
   suite:
     namespace: App
-    src_path: src
     spec_prefix: Spec
 
 extensions:

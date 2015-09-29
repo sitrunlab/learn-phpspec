@@ -1,9 +1,9 @@
 suites:
   suite:
-    namespace: App\
-    src_path: src
-    psr4_prefix: App\
-    spec_prefix: Spec\
+    namespace: "App"
+    src_path: "src"
+    psr4_prefix: "App\\"
+    spec_prefix: "Spec\\"
 
 extensions:
   - PhpSpec\Extension\CodeCoverageExtension

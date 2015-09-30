@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Markdown;
+namespace App
 
 interface Writer
 {

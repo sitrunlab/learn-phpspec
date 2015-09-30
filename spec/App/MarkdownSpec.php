@@ -20,14 +20,15 @@
 namespace spec\App;
 
 use PhpSpec\ObjectBehavior;
-use App\Markdown\Writer;
+use Prophecy\Argument;
+use App\Writer;
 
 class MarkdownSpec extends ObjectBehavior
 {
     function it_outputs_converted_text(Writer $writer)
     {
-        $writer->writeText("<p>Hi, there</p>")->shouldBeCalled();
+    	$writer->writeText()->shouldBeCalled();
 
-        $this->outputHtml("Hi, there", $writer);
+        $this->outputHtml("<p>Hi, there</p>", $writer);
     }
 }

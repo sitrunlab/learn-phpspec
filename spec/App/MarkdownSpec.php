@@ -27,8 +27,9 @@ class MarkdownSpec extends ObjectBehavior
 {
     function it_outputs_converted_text(Writer $writer)
     {
-    	$writer->writeText()->shouldBeCalled();
+    	$writer->writeText('Hi, there')->shouldBeCalled();
 
-        $this->outputHtml("<p>Hi, there</p>", $writer);
+    	// when
+        $this->outputHtml('Hi, there', $writer);
     }
 }

@@ -23,6 +23,6 @@ class Markdown
 {
     public function outputHtml($argument1, $argument2)
     {
-        
+        $argument2->writeText($argument1);
     }
 }

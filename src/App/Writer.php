@@ -4,6 +4,5 @@ namespace App;
 
 interface Writer
 {
-
-    public function writeText();
+    public function writeText($argument1);
 }

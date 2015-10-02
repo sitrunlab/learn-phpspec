@@ -22,14 +22,24 @@ namespace spec\App;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use App\Writer;
+use App\Reader;
 
 class MarkdownSpec extends ObjectBehavior
 {
+	// Mock test
     function it_outputs_converted_text(Writer $writer)
     {
     	$writer->writeText('Hi, there')->shouldBeCalled();
 
     	// when
         $this->outputHtml('Hi, there', $writer);
+    }
+
+    // Stub test
+    function it_converts_text_from_an_external_source(Reader $reader)
+    {
+    	$reader->getMarkdown()->willReturn("<p>Hi, there!</p>");
+
+    	$this->toHtmlFromReader($reader)->shouldReturn("<p>Hi, there!</p>");
     }
 }

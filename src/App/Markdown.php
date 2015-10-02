@@ -21,8 +21,15 @@ namespace App;
 
 class Markdown
 {
+	// Mock test
     public function outputHtml($argument1, $argument2)
     {
         $argument2->writeText($argument1);
+    }
+
+    // Stub test
+    public function toHtmlFromReader($argument1)
+    {
+        return $argument1->getMarkdown();
     }
 }

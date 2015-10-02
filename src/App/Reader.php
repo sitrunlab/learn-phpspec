@@ -17,22 +17,9 @@
  * and is licensed under the MIT license.
  */
 
-namespace spec\App;
+namespace App;
 
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use App\StubReader;
-
-/**
-* @param App\StubReader $reader
-*/
-
-class StubMarkdownSpec extends ObjectBehavior
+interface Reader
 {
-    function it_converts_text_from_an_external_source(StubReader $reader)
-    {
-    	$reader->getMarkdown()->willReturn("<p>Hi, there!</p>");
-
-    	$this->toHtmlFromReader($reader)->shouldReturn("<p>Hi, there!</p>");
-    }
+    public function getMarkdown();
 }

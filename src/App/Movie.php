@@ -19,31 +19,52 @@
 
 namespace App;
 
-class Markdown
+use App\InvalidArgumentException;
+
+class Movie
 {
-	// Mock test
-    public function __construct($argument1)
+    public function getRating()
     {
-        // TODO: write logic here
+        $rating = 5;
+        
+        return $rating;
     }
 
-    public static function createForWriting($argument1)
+    public function getRatingLike()
     {
-        $markdown = new Markdown($argument1);
-
-        // TODO: write logic here
-
-        return $markdown;
+        $rating = "5";
+        
+        return $rating;
     }
 
-    public function outputHtml($argument1, $argument2)
+    public function getTitle()
     {
-        $argument2->writeText($argument1);
+        $title = "Star Wars";
+
+        return $title;
     }
 
-    // Stub test
-    public function toHtmlFromReader($argument1)
+    public function getReleaseDate()
     {
-        return $argument1->getMarkdown();
+        $date = 233366400;
+
+        return $date;
+    }
+
+    public function getDescription()
+    {
+        $desc = "Inexplicably popular children's film";
+
+        return $desc;
+    }
+
+    public function setRating($argument1)
+    {
+        if($argument1 < 0)
+        {
+        	throw new InvalidArgumentException("Error Processing Request");	
+        }
+
+        return $argument1;
     }
 }

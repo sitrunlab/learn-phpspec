@@ -29,6 +29,10 @@ class MarkdownSpec extends ObjectBehavior
 	// Mock test
     function it_outputs_converted_text(Writer $writer)
     {
+        // Pass object into constructor
+        $this->beConstructedWith($writer);
+
+        // Describe method App\Writer::writeText() should called before example
     	$writer->writeText('Hi, there')->shouldBeCalled();
 
     	// when
@@ -38,8 +42,13 @@ class MarkdownSpec extends ObjectBehavior
     // Stub test
     function it_converts_text_from_an_external_source(Reader $reader)
     {
+        // call constructor through method createForWriting
+        $this->beConstructedWith('createForWriting', $reader);
+
+        // Stub is a process in test that record info about function call.
     	$reader->getMarkdown()->willReturn("<p>Hi, there!</p>");
 
+        // Describe method toHtmlFromReader() must exact <p>Hi, there!</p> or will be return failed
     	$this->toHtmlFromReader($reader)->shouldReturn("<p>Hi, there!</p>");
     }
 }

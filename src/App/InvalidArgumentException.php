@@ -19,31 +19,10 @@
 
 namespace App;
 
-class Markdown
+class InvalidArgumentException
 {
-	// Mock test
-    public function __construct($argument1)
+    public function __construct($message = '')
     {
-        // TODO: write logic here
-    }
-
-    public static function createForWriting($argument1)
-    {
-        $markdown = new Markdown($argument1);
-
-        // TODO: write logic here
-
-        return $markdown;
-    }
-
-    public function outputHtml($argument1, $argument2)
-    {
-        $argument2->writeText($argument1);
-    }
-
-    // Stub test
-    public function toHtmlFromReader($argument1)
-    {
-        return $argument1->getMarkdown();
+        return $message;
     }
 }

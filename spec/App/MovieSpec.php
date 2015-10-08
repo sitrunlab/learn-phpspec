@@ -20,11 +20,9 @@
 namespace spec\App;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class MovieSpec extends ObjectBehavior
 {
-    // Matchers
     function it_should_be_a_great_movie()
     {
         // It compares return data with operator '==='
@@ -56,5 +54,27 @@ class MovieSpec extends ObjectBehavior
     	// You can use ->during('setRating', [-3]);
     	// where first argument is method name and second argument is an array of values pass to the method
         $this->shouldThrow('\InvalidArgumentException')->duringSetRating(-3);
+    }
+
+    function it_should_be_a_movie()
+    {
+        // there must be App\Movie
+        $this->shouldHaveType('App\Movie');
+        // The App\Movie should return something
+        $this->shouldReturnAnInstanceOf('App\Movie');
+        // The App\Movie should instance App\MoviesInstance (just for sample)
+        $this->shouldBeAnInstanceOf('App\MoviesInstance');
+    }
+
+    function it_should_be_available_on_cinemas()
+    {
+        // calls isAvailableOnCinemas() and its should return true to pass and it should be in App\Movie
+        $this->shouldBeAvailableOnCinemas();
+    }
+
+    function it_should_have_soundtrack()
+    {
+        // calls hasSoundtrack() and its should return true to pass and it should be in App\Movie
+        $this->shouldHaveSoundtrack();
     }
 }

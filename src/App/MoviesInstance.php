@@ -19,9 +19,9 @@
 
 namespace App;
 
-use InvalidArgumentException as BaseInvalidArgumentException;
+use App\InvalidArgumentException;
 
-class InvalidArgumentException extends BaseInvalidArgumentException
+class MoviesInstance
 {
-    
+   
 }

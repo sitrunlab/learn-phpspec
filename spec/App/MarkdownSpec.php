@@ -26,7 +26,6 @@ use App\Reader;
 
 class MarkdownSpec extends ObjectBehavior
 {
-	// Mock test
     function it_outputs_converted_text(Writer $writer)
     {
         // Pass object into constructor
@@ -39,7 +38,6 @@ class MarkdownSpec extends ObjectBehavior
         $this->outputHtml('Hi, there', $writer);
     }
 
-    // Stub test
     function it_converts_text_from_an_external_source(Reader $reader)
     {
         // call constructor through method createForWriting

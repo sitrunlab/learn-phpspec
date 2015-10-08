@@ -20,8 +20,9 @@
 namespace App;
 
 use App\InvalidArgumentException;
+use App\MoviesInstance;
 
-class Movie
+class Movie extends MoviesInstance
 {
     public function getRating()
     {
@@ -60,11 +61,20 @@ class Movie
 
     public function setRating($argument1)
     {
-        if($argument1 < 0)
-        {
+        if($argument1 < 0) {
         	throw new InvalidArgumentException("Error Processing Request");	
         }
 
         return $argument1;
+    }
+
+    public function isAvailableOnCinemas()
+    {
+        return true;
+    }
+
+    public function hasSoundtrack()
+    {
+        return true;
     }
 }

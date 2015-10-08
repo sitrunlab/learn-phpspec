@@ -21,7 +21,6 @@ namespace App;
 
 class Markdown
 {
-	// Mock test
     public function __construct($argument1)
     {
         // TODO: write logic here
@@ -41,7 +40,6 @@ class Markdown
         $argument2->writeText($argument1);
     }
 
-    // Stub test
     public function toHtmlFromReader($argument1)
     {
         return $argument1->getMarkdown();

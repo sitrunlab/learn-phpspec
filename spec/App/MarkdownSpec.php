@@ -38,10 +38,13 @@ class MarkdownSpec extends ObjectBehavior
         $this->outputHtml('Hi, there', $writer);
     }
 
-    function it_converts_text_from_an_external_source(Reader $reader)
+    function it_converts_text_from_an_external_source(Reader $reader, Writer $writer)
     {
-        // call constructor through method createForWriting
-        $this->beConstructedWith('createForWriting', $reader);
+       // call constructor through method createForWriting
+        $this->beConstructedWith('createForWriting', [$writer]);
+
+        // Pass object into constructor
+        $this->beConstructedWith($writer);
 
         // Stub is a process in test that record info about function call.
     	$reader->getMarkdown()->willReturn("<p>Hi, there!</p>");

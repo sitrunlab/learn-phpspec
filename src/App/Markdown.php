@@ -21,12 +21,12 @@ namespace App;
 
 class Markdown
 {
-    public function __construct($argument1)
+    public function __construct(Writer $argument1)
     {
         // TODO: write logic here
     }
 
-    public static function createForWriting(Reader $argument1)
+    public static function createForWriting(Writer $argument1)
     {
         $markdown = new Markdown($argument1);
 

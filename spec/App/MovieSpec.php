@@ -62,8 +62,7 @@ class MovieSpec extends ObjectBehavior
         $this->shouldHaveType('App\Movie');
         // The App\Movie should return something
         $this->shouldReturnAnInstanceOf('App\Movie');
-        // The App\Movie should instance App\MoviesInstance (just for sample)
-        $this->shouldBeAnInstanceOf('App\MoviesInstance');
+        $this->shouldBeAnInstanceOf('App\Movie');
     }
 
     function it_should_be_available_on_cinemas()
@@ -76,5 +75,26 @@ class MovieSpec extends ObjectBehavior
     {
         // calls hasSoundtrack() and its should return true to pass and it should be in App\Movie
         $this->shouldHaveSoundtrack();
+    }
+
+    function it_should_have_one_director()
+    {
+        // You can check the number of items in the return value using the Count matcher. 
+        // for example you can return array type 4 items in array. (see src/App/Movie.php)
+        $this->getDirectors()->shouldHaveCount(4);
+    }
+
+    function it_should_have_a_string_as_title()
+    {
+        // To specify that the value returned by a method should be a specific primitive type you can use the Scalar matcher.
+        // for example method getTitle() should return a string, if not it will be failed.
+        $this->getTitle()->shouldBeString();
+    }
+
+    function it_should_contain_jane_smith_in_the_cast()
+    {
+        // specify that a method should return an array that contains a given value with the ArrayContain matcher.
+        // for example : method getCast() will return an array, in this array should contain value "Jane Smith", if not it will be failed.
+        $this->getCast()->shouldContain('Jane Smith');
     }
 }

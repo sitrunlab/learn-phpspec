@@ -26,7 +26,7 @@ class Markdown
         // TODO: write logic here
     }
 
-    public static function createForWriting($argument1)
+    public static function createForWriting(Reader $argument1)
     {
         $markdown = new Markdown($argument1);
 
@@ -35,12 +35,12 @@ class Markdown
         return $markdown;
     }
 
-    public function outputHtml($argument1, $argument2)
+    public function outputHtml($argument1, Writer $argument2)
     {
         $argument2->writeText($argument1);
     }
 
-    public function toHtmlFromReader($argument1)
+    public function toHtmlFromReader(Reader $argument1)
     {
         return $argument1->getMarkdown();
     }

@@ -78,7 +78,6 @@ class MovieSpec extends ObjectBehavior
 
     public function it_should_have_one_director()
     {
-        // You can check the number of items in the return value using the Count matcher. 
         // for example you can return array type 4 items in array. (see src/App/Movie.php)
         $this->getDirectors()->shouldHaveCount(4);
     }

@@ -76,15 +76,11 @@ class Movie
 
     public function getDirectors()
     {
-        $directors = array('Director one', 'Director two', 'Director three', 'Director four');
-
-        return $directors;
+        return ['Director one', 'Director two', 'Director three', 'Director four'];
     }
 
     public function getCast()
     {
-        $casts = array('Cast one', 'Cast two', 'Cast three', 'Jane Smith');
-
-        return $casts;
+        return ['Cast one', 'Cast two', 'Cast three', 'Jane Smith'];
     }
 }

@@ -20,27 +20,27 @@ namespace App;
 
 class Markdown
 {
-    public function __construct(Writer $argument1)
+    public function __construct(Writer $writer)
     {
         // TODO: write logic here
     }
 
-    public static function createForWriting(Writer $argument1)
+    public static function createForWriting(Writer $writer)
     {
-        $markdown = new self($argument1);
+        $markdown = new self($writer);
 
         // TODO: write logic here
 
         return $markdown;
     }
 
-    public function outputHtml($argument1, Writer $argument2)
+    public function outputHtml($output, Writer $writer)
     {
-        $argument2->writeText($argument1);
+        $writer->writeText($output);
     }
 
-    public function toHtmlFromReader(Reader $argument1)
+    public function toHtmlFromReader(Reader $reader)
     {
-        return $argument1->getMarkdown();
+        return $reader->getMarkdown();
     }
 }

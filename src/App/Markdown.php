@@ -16,7 +16,6 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
-
 namespace App;
 
 class Markdown
@@ -28,7 +27,7 @@ class Markdown
 
     public static function createForWriting(Writer $argument1)
     {
-        $markdown = new Markdown($argument1);
+        $markdown = new self($argument1);
 
         // TODO: write logic here
 

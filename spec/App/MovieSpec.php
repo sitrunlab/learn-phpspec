@@ -16,14 +16,13 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
-
 namespace spec\App;
 
 use PhpSpec\ObjectBehavior;
 
 class MovieSpec extends ObjectBehavior
 {
-    function it_should_be_a_great_movie()
+    public function it_should_be_a_great_movie()
     {
         // It compares return data with operator '==='
 
@@ -31,7 +30,7 @@ class MovieSpec extends ObjectBehavior
         $this->getRating()->shouldBe(5);
 
         // It should return "Star Wars"
-        $this->getTitle()->shouldBeEqualTo("Star Wars");
+        $this->getTitle()->shouldBeEqualTo('Star Wars');
 
         // It should return integer 233366400
         $this->getReleaseDate()->shouldReturn(233366400);
@@ -40,23 +39,23 @@ class MovieSpec extends ObjectBehavior
         $this->getDescription()->shouldEqual("Inexplicably popular children's film");
     }
 
-    function it_comparison_match_test()
+    public function it_comparison_match_test()
     {
-    	// It compares return data with operator '=='
+        // It compares return data with operator '=='
 
-    	// describe method App\Movie::getRatingLike() should return 5 or "5", if not it will be failed
+        // describe method App\Movie::getRatingLike() should return 5 or "5", if not it will be failed
         $this->getRatingLike()->shouldBeLike(5);
     }
 
-    function it_should_not_allow_negative_ratings()
+    public function it_should_not_allow_negative_ratings()
     {
-    	// It will be failed if method setRating is negatif number
-    	// You can use ->during('setRating', [-3]);
-    	// where first argument is method name and second argument is an array of values pass to the method
+        // It will be failed if method setRating is negatif number
+        // You can use ->during('setRating', [-3]);
+        // where first argument is method name and second argument is an array of values pass to the method
         $this->shouldThrow('\InvalidArgumentException')->duringSetRating(-3);
     }
 
-    function it_should_be_a_movie()
+    public function it_should_be_a_movie()
     {
         // there must be App\Movie
         $this->shouldHaveType('App\Movie');
@@ -65,33 +64,33 @@ class MovieSpec extends ObjectBehavior
         $this->shouldBeAnInstanceOf('App\Movie');
     }
 
-    function it_should_be_available_on_cinemas()
+    public function it_should_be_available_on_cinemas()
     {
         // calls isAvailableOnCinemas() and its should return true to pass and it should be in App\Movie
         $this->shouldBeAvailableOnCinemas();
     }
 
-    function it_should_have_soundtrack()
+    public function it_should_have_soundtrack()
     {
         // calls hasSoundtrack() and its should return true to pass and it should be in App\Movie
         $this->shouldHaveSoundtrack();
     }
 
-    function it_should_have_one_director()
+    public function it_should_have_one_director()
     {
         // You can check the number of items in the return value using the Count matcher. 
         // for example you can return array type 4 items in array. (see src/App/Movie.php)
         $this->getDirectors()->shouldHaveCount(4);
     }
 
-    function it_should_have_a_string_as_title()
+    public function it_should_have_a_string_as_title()
     {
         // To specify that the value returned by a method should be a specific primitive type you can use the Scalar matcher.
         // for example method getTitle() should return a string, if not it will be failed.
         $this->getTitle()->shouldBeString();
     }
 
-    function it_should_contain_jane_smith_in_the_cast()
+    public function it_should_contain_jane_smith_in_the_cast()
     {
         // specify that a method should return an array that contains a given value with the ArrayContain matcher.
         // for example : method getCast() will return an array, in this array should contain value "Jane Smith", if not it will be failed.

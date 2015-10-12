@@ -16,30 +16,27 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
-
 namespace App;
-
-use App\InvalidArgumentException;
 
 class Movie
 {
     public function getRating()
     {
         $rating = 5;
-        
+
         return $rating;
     }
 
     public function getRatingLike()
     {
-        $rating = "5";
-        
+        $rating = '5';
+
         return $rating;
     }
 
     public function getTitle()
     {
-        $title = "Star Wars";
+        $title = 'Star Wars';
 
         return $title;
     }
@@ -61,7 +58,7 @@ class Movie
     public function setRating($argument1)
     {
         if ($argument1 < 0) {
-            throw new InvalidArgumentException("Error Processing Request");	
+            throw new InvalidArgumentException('Error Processing Request');
         }
 
         return $argument1;
@@ -80,14 +77,14 @@ class Movie
     public function getDirectors()
     {
         $directors = array('Director one', 'Director two', 'Director three', 'Director four');
-        
+
         return $directors;
     }
 
     public function getCast()
     {
         $casts = array('Cast one', 'Cast two', 'Cast three', 'Jane Smith');
-        
+
         return $casts;
     }
 }

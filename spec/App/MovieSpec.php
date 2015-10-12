@@ -30,7 +30,7 @@ class MovieSpec extends ObjectBehavior
         $this->getRating()->shouldBe(5);
 
         // It should return "Star Wars"
-        $this->getTitle()->shouldBeEqualTo('Star Wars');
+        $this->getTitle()->shouldBeEqualTo('The Wizard of Dragon');
 
         // It should return integer 233366400
         $this->getReleaseDate()->shouldReturn(233366400);
@@ -49,7 +49,7 @@ class MovieSpec extends ObjectBehavior
 
     public function it_should_not_allow_negative_ratings()
     {
-        // It will be failed if method setRating is negatif number
+        // It will be failed if method setRating is negative number
         // You can use ->during('setRating', [-3]);
         // where first argument is method name and second argument is an array of values pass to the method
         $this->shouldThrow('\InvalidArgumentException')->duringSetRating(-3);
@@ -95,5 +95,39 @@ class MovieSpec extends ObjectBehavior
         // specify that a method should return an array that contains a given value with the ArrayContain matcher.
         // for example : method getCast() will return an array, in this array should contain value "Jane Smith", if not it will be failed.
         $this->getCast()->shouldContain('Jane Smith');
+    }
+
+    public function it_should_have_jane_smith_in_the_cast_with_a_lead_role()
+    {
+        // This matcher lets you assert a specific value for a specific key on a method that returns an array or an implementor of ArrayAccess.
+        $this->getCast()->shouldHaveKeyWithValue('leadRole', 'Jane Smith');
+    }
+
+    public function it_should_have_a_release_date_for_france()
+    {
+        // You can specify that a method should return an array or an ArrayAccess object with a specific key using the ArrayKey matcher.
+        // key is case sensitive
+        $this->getReleaseDates()->shouldHaveKey('France');
+    }
+
+    public function it_should_have_a_title_that_starts_with_the_wizard()
+    {
+        // The StringStarts matcher lets you specify that a method should return a string starting with a given substring.
+        // value is case sensitive
+        $this->getTitle()->shouldStartWith('The Wizard');
+    }
+
+    public function it_should_have_a_title_that_ends_with_of_dragon()
+    {
+        // The StringEnd matcher lets you specify that a method should return a string ending with a given substring.
+        // value is case sensitive
+        $this->getTitle()->shouldEndWith('of Dragon');
+    }
+
+    public function it_should_have_a_title_that_contains_wizard()
+    {
+        // The StringRegex matcher lets you specify that a method should return a string matching a given regular expression.
+        // for example getTitle() should contain word 'dragon'
+        $this->getTitle()->shouldMatch('/dragon/i');
     }
 }

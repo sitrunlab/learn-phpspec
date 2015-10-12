@@ -36,7 +36,7 @@ class Movie
 
     public function getTitle()
     {
-        $title = 'Star Wars';
+        $title = 'The Wizard of Dragon';
 
         return $title;
     }
@@ -81,6 +81,11 @@ class Movie
 
     public function getCast()
     {
-        return ['Cast one', 'Cast two', 'Cast three', 'Jane Smith'];
+        return ['leadRole' => 'Jane Smith'];
+    }
+
+    public function getReleaseDates()
+    {
+        return ['France' => ['date' => 'Oct 31, 2015']];
     }
 }

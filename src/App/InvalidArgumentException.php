@@ -18,29 +18,8 @@
  */
 namespace App;
 
-class Markdown
+use InvalidArgumentException as BaseInvalidArgumentException;
+
+class InvalidArgumentException extends BaseInvalidArgumentException
 {
-    public function __construct(Writer $writer)
-    {
-        // TODO: write logic here
-    }
-
-    public static function createForWriting(Writer $writer)
-    {
-        $markdown = new self($writer);
-
-        // TODO: write logic here
-
-        return $markdown;
-    }
-
-    public function outputHtml($output, Writer $writer)
-    {
-        $writer->writeText($output);
-    }
-
-    public function toHtmlFromReader(Reader $reader)
-    {
-        return $reader->getMarkdown();
-    }
 }

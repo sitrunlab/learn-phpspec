@@ -5,6 +5,8 @@ suites:
 extensions:
   - PhpSpec\Extension\CodeCoverageExtension
 
+formatter.name: pretty
+
 code_coverage:
   format:
     - html

@@ -2,6 +2,15 @@
 
 [![Build Status](https://travis-ci.org/sitrunlab/learn-phpspec.svg)](https://travis-ci.org/sitrunlab/learn-phpspec)
 
+Consume:
+
+```bash
+$ git clone https://github.com/sitrunlab/learn-phpspec.git
+$ cd learn-phpspec
+$ composer install
+$ bin/phpspec run
+```
+
 Add new Spec:
 
 ```bash

@@ -16,9 +16,10 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
+
 namespace App;
 
-interface Reader
+interface WriterInterface
 {
-    public function getMarkdown();
+    public function writeText($text);
 }

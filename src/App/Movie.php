@@ -16,6 +16,7 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
+
 namespace App;
 
 class Movie
@@ -55,13 +56,13 @@ class Movie
         return $desc;
     }
 
-    public function setRating($argument1)
+    public function setRating($rating)
     {
-        if ($argument1 < 0) {
+        if ($rating < 0) {
             throw new InvalidArgumentException('Error Processing Request');
         }
 
-        return $argument1;
+        return $rating;
     }
 
     public function isAvailableOnCinemas()
@@ -74,7 +75,7 @@ class Movie
         return true;
     }
 
-    public function getDirectors()
+    public function getDirectories()
     {
         return ['Director one', 'Director two', 'Director three', 'Director four'];
     }

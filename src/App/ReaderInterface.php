@@ -19,29 +19,7 @@
 
 namespace App;
 
-class Markdown
+interface ReaderInterface
 {
-    public function __construct(WriterInterface $writer)
-    {
-        // TODO: write logic here
-    }
-
-    public static function createForWriting(WriterInterface $writer)
-    {
-        $markdown = new static($writer);
-
-        // TODO: write logic here
-
-        return $markdown;
-    }
-
-    public function outputHtml($output, WriterInterface $writer)
-    {
-        $writer->writeText($output);
-    }
-
-    public function toHtmlFromReader(ReaderInterface $reader)
-    {
-        return $reader->getMarkdown();
-    }
+    public function getMarkdown();
 }

@@ -16,27 +16,37 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
+
 namespace spec\App;
 
 use PhpSpec\ObjectBehavior;
-use App\Writer;
-use App\Reader;
+use App\Markdown;
+use App\WriterInterface;
+use App\ReaderInterface;
 
 class MarkdownSpec extends ObjectBehavior
 {
-    public function it_outputs_converted_text(Writer $writer)
+    public function it_is_initializable(WriterInterface $writer)
     {
         // Pass object into constructor
         $this->beConstructedWith($writer);
 
-        // Describe method App\Writer::writeText() should called before example
+        $this->shouldHaveType(Markdown::class);
+    }
+
+    public function it_outputs_converted_text(WriterInterface $writer)
+    {
+        // Pass object into constructor
+        $this->beConstructedWith($writer);
+
+        // Describe method App\WriterInterface::writeText() should called before example
         $writer->writeText('Hi, there')->shouldBeCalled();
 
         // when
         $this->outputHtml('Hi, there', $writer);
     }
 
-    public function it_converts_text_from_an_external_source(Reader $reader, Writer $writer)
+    public function it_converts_text_from_an_external_source(ReaderInterface $reader, WriterInterface $writer)
     {
         // call constructor through method createForWriting
         $this->beConstructedWith('createForWriting', [$writer]);

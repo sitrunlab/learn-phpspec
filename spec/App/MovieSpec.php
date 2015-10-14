@@ -16,8 +16,10 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
+
 namespace spec\App;
 
+use App\Movie;
 use PhpSpec\ObjectBehavior;
 
 class MovieSpec extends ObjectBehavior
@@ -36,7 +38,7 @@ class MovieSpec extends ObjectBehavior
         $this->getReleaseDate()->shouldReturn(233366400);
 
         // It should exact "Inexplicably popular children's film"
-        $this->getDescription()->shouldEqual("Inexplicably popular children's film");
+        $this->getDescription()->shouldEqual('Inexplicably popular children\'s film');
     }
 
     public function it_comparison_match_test()
@@ -58,10 +60,10 @@ class MovieSpec extends ObjectBehavior
     public function it_should_be_a_movie()
     {
         // there must be App\Movie
-        $this->shouldHaveType('App\Movie');
+        $this->shouldHaveType(Movie::class);
         // The App\Movie should return something
-        $this->shouldReturnAnInstanceOf('App\Movie');
-        $this->shouldBeAnInstanceOf('App\Movie');
+        $this->shouldReturnAnInstanceOf(Movie::class);
+        $this->shouldBeAnInstanceOf(Movie::class);
     }
 
     public function it_should_be_available_on_cinemas()
@@ -79,7 +81,7 @@ class MovieSpec extends ObjectBehavior
     public function it_should_have_one_director()
     {
         // for example you can return array type 4 items in array. (see src/App/Movie.php)
-        $this->getDirectors()->shouldHaveCount(4);
+        $this->getDirectories()->shouldHaveCount(4);
     }
 
     public function it_should_have_a_string_as_title()

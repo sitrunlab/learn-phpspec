@@ -17,7 +17,7 @@
  * and is licensed under the MIT license.
  */
 
-namespace App;
+namespace App\Exception;
 
 use InvalidArgumentException as BaseInvalidArgumentException;
 

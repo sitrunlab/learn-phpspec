@@ -54,7 +54,7 @@ class MovieSpec extends ObjectBehavior
         // It will be failed if method setRating is negative number
         // You can use ->during('setRating', [-3]);
         // where first argument is method name and second argument is an array of values pass to the method
-        $this->shouldThrow('\InvalidArgumentException')->duringSetRating(-3);
+        $this->shouldThrow('App\Exception\InvalidArgumentException')->duringSetRating(-3);
     }
 
     public function it_should_be_a_movie()

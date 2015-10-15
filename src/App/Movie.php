@@ -59,7 +59,7 @@ class Movie
     public function setRating($rating)
     {
         if ($rating < 0) {
-            throw new InvalidArgumentException('Error Processing Request');
+            throw new Exception\InvalidArgumentException('Error Processing Request');
         }
 
         return $rating;

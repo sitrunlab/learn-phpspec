@@ -81,7 +81,7 @@ class MovieSpec extends ObjectBehavior
     public function it_should_have_one_director()
     {
         // for example you can return array type 4 items in array. (see src/App/Movie.php)
-        $this->getDirectories()->shouldHaveCount(4);
+        $this->getDirectors()->shouldHaveCount(4);
     }
 
     public function it_should_have_a_string_as_title()

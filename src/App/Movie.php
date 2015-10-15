@@ -75,7 +75,7 @@ class Movie
         return true;
     }
 
-    public function getDirectories()
+    public function getDirectors()
     {
         return ['Director one', 'Director two', 'Director three', 'Director four'];
     }

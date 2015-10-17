@@ -4,6 +4,7 @@ suites:
 
 extensions:
   - PhpSpec\Extension\CodeCoverageExtension
+  - Cjm\PhpSpec\Extension\TypeHintedMethodsExtension
 
 code_coverage:
   format:

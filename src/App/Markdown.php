@@ -21,7 +21,11 @@ namespace App;
 
 class Markdown
 {
+    /** @var WriterInterface */
     private $writer;
+
+    /** @var ReaderInterface */
+    private $reader;
 
     public function __construct(WriterInterface $writer, ReaderInterface $reader)
     {

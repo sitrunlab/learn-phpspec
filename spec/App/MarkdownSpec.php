@@ -26,19 +26,18 @@ use App\ReaderInterface;
 
 class MarkdownSpec extends ObjectBehavior
 {
-    public function it_is_initializable(WriterInterface $writer)
+    public function let(WriterInterface $writer, ReaderInterface $reader)
     {
-        // Pass object into constructor
-        $this->beConstructedWith($writer);
+        $this->beConstructedWith($writer, $reader);
+    }
 
+    public function it_is_initializable()
+    {
         $this->shouldHaveType(Markdown::class);
     }
 
     public function it_outputs_converted_text(WriterInterface $writer)
     {
-        // Pass object into constructor
-        $this->beConstructedWith($writer);
-
         // Describe method App\WriterInterface::writeText() should called before example
         $writer->writeText('Hi, there')->shouldBeCalled();
 
@@ -46,13 +45,10 @@ class MarkdownSpec extends ObjectBehavior
         $this->outputHtml('Hi, there', $writer);
     }
 
-    public function it_converts_text_from_an_external_source(ReaderInterface $reader, WriterInterface $writer)
+    public function it_construct_via_factory_method(WriterInterface $writer, ReaderInterface $reader)
     {
-        // call constructor through method createForWriting
-        $this->beConstructedWith('createForWriting', [$writer]);
-
-        // Pass object into constructor
-        $this->beConstructedWith($writer);
+        // call constructor through method create
+        $this->beConstructedThrough('create', [$writer, $reader]);
 
         // Stub is a process in test that record info about function call.
         $reader->getMarkdown()->willReturn('<p>Hi, there!</p>');

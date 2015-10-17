@@ -21,27 +21,27 @@ namespace App;
 
 class Markdown
 {
-    public function __construct(WriterInterface $writer)
+    private $writer;
+
+    public function __construct(WriterInterface $writer, ReaderInterface $reader)
     {
-        // TODO: write logic here
+        $this->writer = $writer;
+        $this->reader = $reader;
     }
 
-    public static function createForWriting(WriterInterface $writer)
+    public static function create(WriterInterface $writer, ReaderInterface $reader)
     {
-        $markdown = new static($writer);
-
-        // TODO: write logic here
-
+        $markdown = new static($writer, $reader);
         return $markdown;
     }
 
-    public function outputHtml($output, WriterInterface $writer)
+    public function outputHtml($output)
     {
-        $writer->writeText($output);
+        $this->writer->writeText($output);
     }
 
-    public function toHtmlFromReader(ReaderInterface $reader)
+    public function toHtmlFromReader()
     {
-        return $reader->getMarkdown();
+        return $this->reader->getMarkdown();
     }
 }

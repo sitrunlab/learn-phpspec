@@ -1,8 +1,4 @@
 {
-    "require": {
-        "phpspec/phpspec": "~2.3.0",
-        "henrikbjorn/phpspec-code-coverage": "~1.0.1"
-    },
     "config": {
         "bin-dir": "bin"
     },
@@ -12,6 +8,8 @@
         }
     },
     "require-dev": {
+        "phpspec/phpspec": "~2.3.0",
+        "henrikbjorn/phpspec-code-coverage": "~1.0.1",
         "ciaranmcnulty/phpspec-typehintedmethods": "~1.1"
     }
 }

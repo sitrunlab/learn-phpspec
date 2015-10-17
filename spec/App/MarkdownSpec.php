@@ -42,7 +42,7 @@ class MarkdownSpec extends ObjectBehavior
         $writer->writeText('Hi, there')->shouldBeCalled();
 
         // when
-        $this->outputHtml('Hi, there', $writer);
+        $this->outputHtml('Hi, there');
     }
 
     public function it_construct_via_factory_method(WriterInterface $writer, ReaderInterface $reader)
@@ -50,10 +50,7 @@ class MarkdownSpec extends ObjectBehavior
         // call constructor through method create
         $this->beConstructedThrough('create', [$writer, $reader]);
 
-        // Stub is a process in test that record info about function call.
-        $reader->getMarkdown()->willReturn('<p>Hi, there!</p>');
-
-        // Describe method toHtmlFromReader() must exact <p>Hi, there!</p> or will be return failed
-        $this->toHtmlFromReader($reader)->shouldReturn('<p>Hi, there!</p>');
+        $reader->getMarkdown()->willReturn('<p>Hi, there!</p>')->shouldBeCalled();
+        $this->toHtmlFromReader()->shouldReturn('<p>Hi, there!</p>');
     }
 }

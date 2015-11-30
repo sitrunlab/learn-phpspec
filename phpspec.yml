@@ -6,6 +6,7 @@ extensions:
   - PhpSpec\Extension\CodeCoverageExtension
   - Cjm\PhpSpec\Extension\TypeHintedMethodsExtension
   - Coduo\PhpSpec\DataProvider\DataProviderExtension
+  - PhpSpec\NyanFormattersExtension\Extension
 
 code_coverage:
   format:

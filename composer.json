@@ -8,7 +8,7 @@
         }
     },
     "require-dev": {
-        "phpspec/phpspec": "~2.4.0",
+        "phpspec/phpspec": "~2.5.0",
         "henrikbjorn/phpspec-code-coverage": "~1.0.1",
         "ciaranmcnulty/phpspec-typehintedmethods": "~1.1",
         "coduo/phpspec-data-provider-extension": "^1.0",

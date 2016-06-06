@@ -57,6 +57,11 @@ class MovieSpec extends ObjectBehavior
         $this->shouldThrow('App\Exception\InvalidArgumentException')->duringSetRating(-3);
     }
 
+    public function it_should_return_rating_for_positive_value()
+    {
+        $this->setRating(1)->shouldReturn(1);
+    }
+
     public function it_should_be_a_movie()
     {
         // there must be App\Movie

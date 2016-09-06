@@ -12,3 +12,5 @@ extensions:
         clover: coverage.xml
   Cjm\PhpSpec\Extension\TypeHintedMethodsExtension: ~
   PhpSpec\NyanFormattersExtension\Extension: ~
+
+formatter.name: nyan.cat

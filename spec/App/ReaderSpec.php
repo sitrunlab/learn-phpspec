@@ -20,16 +20,15 @@
 namespace spec\App;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ReaderSpec extends ObjectBehavior
-{    
-    function it_is_initializable()
+{
+    public function it_is_initializable()
     {
         $this->shouldHaveType('App\Reader');
     }
     
-    function it_return_html_result()
+    public function it_return_html_result()
     {
         $this->getMarkdown('Hi, there!')->shouldReturn('<p>Hi, there!</p>');
     }

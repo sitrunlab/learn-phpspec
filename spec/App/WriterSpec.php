@@ -20,16 +20,15 @@
 namespace spec\App;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class WriterSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('App\Writer');
     }
     
-    function it_return_text_of_html()
+    public function it_return_text_of_html()
     {
         $this->writeText('<p>Hi, there!</p>')->shouldReturn('Hi, there!');
     }

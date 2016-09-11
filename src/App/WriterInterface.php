@@ -21,5 +21,5 @@ namespace App;
 
 interface WriterInterface
 {
-    public function writeText($text);
+    public function writeText($output);
 }

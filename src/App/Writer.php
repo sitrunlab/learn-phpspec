@@ -19,7 +19,10 @@
 
 namespace App;
 
-interface ReaderInterface
+class Writer implements WriterInterface
 {
-    public function getMarkdown($text);
+    public function writeText($output)
+    {
+        return strip_tags($output);
+    }
 }

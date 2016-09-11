@@ -19,7 +19,10 @@
 
 namespace App;
 
-interface ReaderInterface
+class Reader implements ReaderInterface
 {
-    public function getMarkdown($text);
+    public function getMarkdown($text)
+    {
+        return '<p>' . $text . '</p>';
+    }
 }

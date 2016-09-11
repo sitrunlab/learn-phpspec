@@ -17,9 +17,20 @@
  * and is licensed under the MIT license.
  */
 
-namespace App;
+namespace spec\App;
 
-interface ReaderInterface
-{
-    public function getMarkdown($text);
+use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+
+class ReaderSpec extends ObjectBehavior
+{    
+    function it_is_initializable()
+    {
+        $this->shouldHaveType('App\Reader');
+    }
+    
+    function it_return_html_result()
+    {
+        $this->getMarkdown('Hi, there!')->shouldReturn('<p>Hi, there!</p>');
+    }
 }

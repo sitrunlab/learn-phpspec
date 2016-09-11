@@ -17,9 +17,17 @@
  * and is licensed under the MIT license.
  */
 
-namespace App;
+namespace App\Factory;
 
-interface ReaderInterface
+use App\Markdown;
+use App\Reader;
+use App\Writer;
+
+class MarkdownFactory
 {
-    public function getMarkdown($text);
+    public function createInstance()
+    {
+        $instance = new Markdown(new Writer(), new Reader());
+        return $instance;
+    }
 }

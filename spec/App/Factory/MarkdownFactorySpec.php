@@ -17,9 +17,22 @@
  * and is licensed under the MIT license.
  */
 
-namespace App;
+namespace spec\App\Factory;
 
-interface ReaderInterface
+use App\Markdown;
+use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+
+class MarkdownFactorySpec extends ObjectBehavior
 {
-    public function getMarkdown($text);
+    function it_is_initializable()
+    {
+        $this->shouldHaveType('App\Factory\MarkdownFactory');
+    }
+    
+    public function it_is_createMarkdownInstance()
+    {
+        $this->createInstance()
+             ->shouldReturnAnInstanceOf(Markdown::class);
+    }
 }

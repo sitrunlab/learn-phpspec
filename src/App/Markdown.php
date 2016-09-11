@@ -39,13 +39,13 @@ class Markdown
         return $markdown;
     }
 
-    public function outputHtml($output)
+    public function outputHtmlToText($output)
     {
-        $this->writer->writeText($output);
+        return $this->writer->writeText($output);
     }
 
-    public function toHtmlFromReader()
+    public function toHtmlFromReader($text)
     {
-        return $this->reader->getMarkdown();
+        return $this->reader->getMarkdown($text);
     }
 }

@@ -36,13 +36,15 @@ class MarkdownSpec extends ObjectBehavior
         $this->shouldHaveType(Markdown::class);
     }
 
-    public function it_outputs_converted_text($writer)
+    public function its_html_outputs_converted_text($writer)
     {
         // Describe method App\WriterInterface::writeText() should called before example
-        $writer->writeText('Hi, there')->shouldBeCalled();
+        $writer->writeText('<p>Hi, there!</p>')
+               ->willReturn('Hi, there!')
+               ->shouldBeCalled();
 
         // when
-        $this->outputHtml('Hi, there');
+        $this->outputHtmlToText('<p>Hi, there!</p>');
     }
 
     public function it_construct_via_factory_method($writer, $reader)
@@ -50,7 +52,7 @@ class MarkdownSpec extends ObjectBehavior
         // call constructor through method create
         $this->beConstructedThrough('create', [$writer, $reader]);
 
-        $reader->getMarkdown()->willReturn('<p>Hi, there!</p>')->shouldBeCalled();
-        $this->toHtmlFromReader()->shouldReturn('<p>Hi, there!</p>');
+        $reader->getMarkdown('Hi, there!')->willReturn('<p>Hi, there!</p>')->shouldBeCalled();
+        $this->toHtmlFromReader('Hi, there!')->shouldReturn('<p>Hi, there!</p>');
     }
 }

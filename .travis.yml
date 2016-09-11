@@ -5,6 +5,7 @@ php:
   - 7
 
 before_script:
+  - export LANG=en_US.UTF-8
   - composer self-update
   - composer install --prefer-source --no-interaction
   - composer dump-autoload -o

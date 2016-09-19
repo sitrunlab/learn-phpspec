@@ -11,6 +11,6 @@
         "ciaranmcnulty/phpspec-typehintedmethods": "^2.0",
         "henrikbjorn/phpspec-code-coverage": "^3.0",
         "phpspec/nyan-formatters": "^2.0",
-        "phpspec/phpspec": "^3.0.0"
+        "phpspec/phpspec": "^3.1.0"
     }
 }

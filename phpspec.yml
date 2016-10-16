@@ -5,11 +5,9 @@ suites:
 extensions:
   PhpSpecCodeCoverage\CodeCoverageExtension:
       format:
-        - html
         - clover
       output:
-        html: coverage
-        clover: coverage.xml
+        clover: build/logs/clover.xml
   Cjm\PhpSpec\Extension\TypeHintedMethodsExtension: ~
   PhpSpec\NyanFormattersExtension\Extension: ~
 

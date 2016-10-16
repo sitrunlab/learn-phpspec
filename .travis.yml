@@ -13,6 +13,7 @@ before_script:
 
 script:
   - ./bin/phpspec run
+  - ./bin/coveralls -v --exclude-no-stmt
 
 notifications:
   email: false

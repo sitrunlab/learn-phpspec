@@ -1,6 +1,6 @@
 # learn-phpspec
 
-[![Build Status](https://travis-ci.org/sitrunlab/learn-phpspec.svg)](https://travis-ci.org/sitrunlab/learn-phpspec)
+[![Build Status](https://travis-ci.org/sitrunlab/learn-phpspec.svg?branch=master)](https://travis-ci.org/sitrunlab/learn-phpspec)
 [![Coverage Status](https://coveralls.io/repos/github/sitrunlab/learn-phpspec/badge.svg?branch=master)](https://coveralls.io/github/sitrunlab/learn-phpspec?branch=master)
 
 Consume:

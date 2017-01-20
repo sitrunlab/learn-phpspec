@@ -8,9 +8,11 @@ php:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
+  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then composer global require --dev phpstan/phpstan; fi
   - composer dump-autoload -o
 
 script:
+  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then ~/.composer/vendor/bin/phpstan analyse src/ --level=1; fi
   - ./bin/phpspec run
   - ./bin/coveralls -v --exclude-no-stmt
 

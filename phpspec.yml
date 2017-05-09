@@ -3,7 +3,7 @@ suites:
     namespace: App
 
 extensions:
-  PhpSpecCodeCoverage\CodeCoverageExtension:
+  LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
       format:
         - clover
       output:

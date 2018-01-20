@@ -20,7 +20,7 @@
     "require-dev": {
         "ciaranmcnulty/phpspec-typehintedmethods": "^3.0",
         "leanphp/phpspec-code-coverage": "^4.0",
-        "phpspec/nyan-formatters": "dev-master",
+        "phpspec/nyan-formatters": "^2.0.1",
         "phpspec/phpspec": "^4.0",
         "satooshi/php-coveralls": "^1.0"
     }

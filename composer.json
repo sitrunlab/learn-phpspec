@@ -13,15 +13,29 @@
         }
     },
     "require": {
-        "php": "^7.0"
+        "php": "^7.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "ciaranmcnulty/phpspec-typehintedmethods": "^3.0",
-        "leanphp/phpspec-code-coverage": "^4.0",
-        "phpspec/nyan-formatters": "^2.0.1",
-        "phpspec/phpspec": "^4.0",
+        "ciaranmcnulty/phpspec-typehintedmethods": "dev-patch-1",
+        "leanphp/phpspec-code-coverage": "dev-patch-1",
+        "phpspec/nyan-formatters": "dev-patch-1",
+        "phpspec/phpspec": "5.0.0-RC1",
         "satooshi/php-coveralls": "^1.0"
-    }
+    },
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/samsonasik/nyan-formatters.git"
+        },
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/samsonasik/phpspec-code-coverage.git"
+        },
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/samsonasik/phpspec-typehintedmethods.git"
+        }
+    ]
 }

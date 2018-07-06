@@ -1,4 +1,6 @@
 {
+    "name": "sitrunlab/learn-phpspec",
+    "description": "Repository to get started with phpspec",
     "config": {
         "bin-dir": "bin"
     },
@@ -13,15 +15,27 @@
         }
     },
     "require": {
-        "php": "^7.0"
+        "php": "^7.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "ciaranmcnulty/phpspec-typehintedmethods": "^3.0",
-        "leanphp/phpspec-code-coverage": "^4.0",
-        "phpspec/nyan-formatters": "^2.0.1",
-        "phpspec/phpspec": "^4.0",
+        "ciaranmcnulty/phpspec-typehintedmethods": "dev-patch-1",
+        "leanphp/phpspec-code-coverage": "dev-patch-1",
+        "phpspec/nyan-formatters": "dev-master",
+        "phpspec/phpspec": "5.0.0-RC1",
         "satooshi/php-coveralls": "^1.0"
-    }
+    },
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/samsonasik/phpspec-code-coverage",
+            "no-api": true
+        },
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/samsonasik/phpspec-typehintedmethods",
+            "no-api": true
+        }
+    ]
 }

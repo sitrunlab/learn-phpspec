@@ -27,11 +27,11 @@
     "repositories" : [
         {
             "type" : "vcs",
-            "url" : "git@github.com:samsonasik/phpspec-code-coverage.git"
+            "url" : "https://github.com/samsonasik/phpspec-code-coverage"
         },
         {
             "type" : "vcs",
-            "url" : "git@github.com:samsonasik/phpspec-typehintedmethods.git"
+            "url" : "https://github.com/samsonasik/phpspec-typehintedmethods"
         }
     ]
 }

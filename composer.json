@@ -1,4 +1,6 @@
 {
+    "name": "sitrunlab/learn-phpspec",
+    "description": "Repository to get started with phpspec",
     "config": {
         "bin-dir": "bin"
     },
@@ -27,11 +29,13 @@
     "repositories" : [
         {
             "type" : "vcs",
-            "url" : "https://github.com/samsonasik/phpspec-code-coverage"
+            "url" : "https://github.com/samsonasik/phpspec-code-coverage",
+            "no-api": true
         },
         {
             "type" : "vcs",
-            "url" : "https://github.com/samsonasik/phpspec-typehintedmethods"
+            "url" : "https://github.com/samsonasik/phpspec-typehintedmethods",
+            "no-api": true
         }
     ]
 }

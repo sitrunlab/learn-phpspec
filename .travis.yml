@@ -11,9 +11,9 @@ before_script:
   - composer dump-autoload -o
 
 script:
-  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then ~/.composer/vendor/bin/phpstan analyse src/ --level=7; fi
+  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then ~/.composer/vendor/bin/phpstan analyse src/ --level=max; fi
   - ./bin/phpspec run
-  - ./bin/coveralls -v --exclude-no-stmt
+  - ./bin/php-coveralls -v --exclude-no-stmt
 
 notifications:
   email: false

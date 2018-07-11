@@ -24,7 +24,7 @@
         "leanphp/phpspec-code-coverage": "dev-patch-1",
         "phpspec/nyan-formatters": "dev-master",
         "phpspec/phpspec": "5.0.0-RC1",
-        "satooshi/php-coveralls": "^1.0"
+        "php-coveralls/php-coveralls": "^2.0"
     },
     "repositories" : [
         {

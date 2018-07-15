@@ -20,7 +20,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "ciaranmcnulty/phpspec-typehintedmethods": "dev-patch-1",
+        "ciaranmcnulty/phpspec-typehintedmethods": "^4.0",
         "leanphp/phpspec-code-coverage": "dev-patch-1",
         "phpspec/nyan-formatters": "dev-master",
         "phpspec/phpspec": "5.0.0-RC1",
@@ -30,11 +30,6 @@
         {
             "type" : "vcs",
             "url" : "https://github.com/samsonasik/phpspec-code-coverage",
-            "no-api": true
-        },
-        {
-            "type" : "vcs",
-            "url" : "https://github.com/samsonasik/phpspec-typehintedmethods",
             "no-api": true
         }
     ]

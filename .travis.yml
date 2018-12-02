@@ -6,13 +6,13 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - nightly
 
 before_script:
   - composer self-update
   - composer install --prefer-dist --no-interaction
   - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then composer require --dev phpstan/phpstan; fi
   - composer dump-autoload -o
+  - if [[ $TRAVIS_PHP_VERSION = 7.3 ]]; then git clone git://github.com/xdebug/xdebug.git && cd xdebug && phpize && ./configure --enable-xdebug  && make && make install && echo "zend_extension = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini && cd ..; fi
 
 script:
   - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then ./bin/phpstan analyse src/ --level=max; fi

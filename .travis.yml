@@ -7,11 +7,11 @@ php:
 before_script:
   - composer self-update
   - composer install --prefer-dist --no-interaction
-  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then composer global require --dev phpstan/phpstan; fi
+  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then composer require --dev phpstan/phpstan; fi
   - composer dump-autoload -o
 
 script:
-  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then ~/.composer/vendor/bin/phpstan analyse src/ --level=max; fi
+  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]]; then ./bin/phpstan analyse src/ --level=max; fi
   - ./bin/phpspec run
   - ./bin/php-coveralls -v --exclude-no-stmt
 

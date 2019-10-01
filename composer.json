@@ -21,16 +21,9 @@
     "prefer-stable": true,
     "require-dev": {
         "ciaranmcnulty/phpspec-typehintedmethods": "^4.0",
-        "leanphp/phpspec-code-coverage": "dev-patch-1",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.0",
         "phpspec/nyan-formatters": "dev-master",
         "phpspec/phpspec": "^5.1.0",
         "php-coveralls/php-coveralls": "^2.0"
-    },
-    "repositories" : [
-        {
-            "type" : "vcs",
-            "url" : "https://github.com/samsonasik/phpspec-code-coverage",
-            "no-api": true
-        }
-    ]
+    }
 }

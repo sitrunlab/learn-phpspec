@@ -29,6 +29,6 @@ class MarkdownFactory
 {
     public function createInstance() : Markdown
     {
-        return Markdown::create(new Writer(), new Reader());
+        return new Markdown(new Writer(), new Reader());
     }
 }

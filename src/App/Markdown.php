@@ -29,7 +29,7 @@ final class Markdown
     /** @var ReaderInterface */
     private $reader;
 
-    private function __construct(WriterInterface $writer, ReaderInterface $reader)
+    public function __construct(WriterInterface $writer, ReaderInterface $reader)
     {
         $this->writer = $writer;
         $this->reader = $reader;

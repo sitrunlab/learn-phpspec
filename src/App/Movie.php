@@ -17,46 +17,38 @@
  * and is licensed under the MIT license.
  */
 
+declare(strict_types=1);
+
 namespace App;
 
 class Movie
 {
-    public function getRating()
+    public function getRating() : int
     {
-        $rating = 5;
-
-        return $rating;
+        return 5;
     }
 
-    public function getRatingLike()
+    public function getRatingLike() : string
     {
-        $rating = '5';
-
-        return $rating;
+        return '5';
     }
 
-    public function getTitle()
+    public function getTitle() : string
     {
-        $title = 'The Wizard of Dragon';
-
-        return $title;
+        return 'The Wizard of Dragon';
     }
 
-    public function getReleaseDate()
+    public function getReleaseDate() : int
     {
-        $date = 233366400;
-
-        return $date;
+        return 233366400;
     }
 
-    public function getDescription()
+    public function getDescription() : string
     {
-        $desc = "Inexplicably popular children's film";
-
-        return $desc;
+        return "Inexplicably popular children's film";
     }
 
-    public function setRating($rating)
+    public function setRating(int $rating) : int
     {
         if ($rating < 0) {
             throw new Exception\InvalidArgumentException('Error Processing Request');
@@ -65,27 +57,30 @@ class Movie
         return $rating;
     }
 
-    public function isAvailableOnCinemas()
+    public function isAvailableOnCinemas() : bool
     {
         return true;
     }
 
-    public function hasSoundtrack()
+    public function hasSoundtrack() : bool
     {
         return true;
     }
 
-    public function getDirectors()
+    /** @return array<string> */
+    public function getDirectors() : array
     {
         return ['Director one', 'Director two', 'Director three', 'Director four'];
     }
 
-    public function getCast()
+    /** @return array<string> */
+    public function getCast() : array
     {
         return ['leadRole' => 'Jane Smith'];
     }
 
-    public function getReleaseDates()
+    /** @return array<array> */
+    public function getReleaseDates() : array
     {
         return ['France' => ['date' => 'Oct 31, 2015']];
     }

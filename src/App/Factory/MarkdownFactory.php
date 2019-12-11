@@ -17,6 +17,8 @@
  * and is licensed under the MIT license.
  */
 
+declare(strict_types=1);
+
 namespace App\Factory;
 
 use App\Markdown;
@@ -25,9 +27,8 @@ use App\Writer;
 
 class MarkdownFactory
 {
-    public function createInstance()
+    public function createInstance() : Markdown
     {
-        $instance = new Markdown(new Writer(), new Reader());
-        return $instance;
+        return Markdown::create(new Writer(), new Reader());
     }
 }

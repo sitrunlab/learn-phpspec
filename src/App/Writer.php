@@ -17,11 +17,13 @@
  * and is licensed under the MIT license.
  */
 
+declare(strict_types=1);
+
 namespace App;
 
 class Writer implements WriterInterface
 {
-    public function writeText($output)
+    public function writeText(string $output) : string
     {
         return strip_tags($output);
     }

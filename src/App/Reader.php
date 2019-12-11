@@ -17,11 +17,13 @@
  * and is licensed under the MIT license.
  */
 
+declare(strict_types=1);
+
 namespace App;
 
 class Reader implements ReaderInterface
 {
-    public function getMarkdown($text)
+    public function getMarkdown(string $text) : string
     {
         return '<p>' . $text . '</p>';
     }

@@ -17,9 +17,11 @@
  * and is licensed under the MIT license.
  */
 
+declare(strict_types=1);
+
 namespace App;
 
 interface WriterInterface
 {
-    public function writeText($output);
+    public function writeText(string $output) : string;
 }

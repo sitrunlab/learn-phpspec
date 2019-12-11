@@ -17,9 +17,11 @@
  * and is licensed under the MIT license.
  */
 
+declare(strict_types=1);
+
 namespace App;
 
-class Markdown
+final class Markdown
 {
     /** @var WriterInterface */
     private $writer;
@@ -27,24 +29,23 @@ class Markdown
     /** @var ReaderInterface */
     private $reader;
 
-    public function __construct(WriterInterface $writer, ReaderInterface $reader)
+    private function __construct(WriterInterface $writer, ReaderInterface $reader)
     {
         $this->writer = $writer;
         $this->reader = $reader;
     }
 
-    public static function create(WriterInterface $writer, ReaderInterface $reader)
+    public static function create(WriterInterface $writer, ReaderInterface $reader) : self
     {
-        $markdown = new static($writer, $reader);
-        return $markdown;
+        return new self($writer, $reader);
     }
 
-    public function outputHtmlToText($output)
+    public function outputHtmlToText(string $output) : string
     {
         return $this->writer->writeText($output);
     }
 
-    public function toHtmlFromReader($text)
+    public function toHtmlFromReader(string $text) : string
     {
         return $this->reader->getMarkdown($text);
     }

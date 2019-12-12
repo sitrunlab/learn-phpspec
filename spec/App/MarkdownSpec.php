@@ -45,6 +45,9 @@ class MarkdownSpec extends ObjectBehavior
 
         // when
         $this->outputHtmlToText('<p>Hi, there!</p>');
+
+        // spy
+        $writer->writeText('<p>Hi, there!</p>')->shouldHaveBeenCalled();
     }
 
     public function it_construct_via_factory_method($writer, $reader)
@@ -54,5 +57,8 @@ class MarkdownSpec extends ObjectBehavior
 
         $reader->getMarkdown('Hi, there!')->willReturn('<p>Hi, there!</p>')->shouldBeCalled();
         $this->toHtmlFromReader('Hi, there!')->shouldReturn('<p>Hi, there!</p>');
+
+        // spy
+        $reader->getMarkdown('Hi, there!')->shouldHaveBeenCalled();
     }
 }

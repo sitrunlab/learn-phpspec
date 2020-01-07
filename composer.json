@@ -22,7 +22,7 @@
     "require-dev": {
         "ciaranmcnulty/phpspec-typehintedmethods": "dev-patch-1",
         "friends-of-phpspec/phpspec-code-coverage": "^4.3",
-        "phpspec/nyan-formatters": "dev-patch-1",
+        "phpspec/nyan-formatters": "^2.0.2",
         "phpspec/phpspec": "^6.1",
         "php-coveralls/php-coveralls": "^2.0"
     },
@@ -30,11 +30,6 @@
         {
             "type" : "vcs",
             "url" : "https://github.com/samsonasik/phpspec-typehintedmethods",
-            "no-api": true
-        },
-        {
-            "type" : "vcs",
-            "url" : "https://github.com/samsonasik/nyan-formatters",
             "no-api": true
         }
     ]
